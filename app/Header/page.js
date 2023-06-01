@@ -1,9 +1,10 @@
-import React from "react";
+"use client";
 import { Autocomplete } from "@react-google-maps/api";
 import { AppBar, Toolbar, Typography, InputBase, Box } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search.js";
 import { alpha } from "@mui/material/styles";
 import { roboto_mono } from "../fonts";
+import { createContext } from "react";
 
 const Header = () => {
   return (

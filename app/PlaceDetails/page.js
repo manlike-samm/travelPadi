@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   Typography,
@@ -11,6 +12,7 @@ import {
 } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
+import { createContext, useRef, useLayoutEffect } from "react";
 
 const PlaceDetails = ({ place, selected, refProp, childClicked }) => {
   if (selected && refProp) {
@@ -24,32 +26,32 @@ const PlaceDetails = ({ place, selected, refProp, childClicked }) => {
       <CardMedia
         style={{ height: 350 }}
         image={
-          place.photo
-            ? place.photo.images.large.url
+          place?.photo
+            ? place?.photo?.images?.large?.url
             : "https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg"
         }
-        title={place.name}
+        title={place?.name}
       />
       <CardContent sx={{ color: "#116D6E" }}>
         <Typography gutterBottom variant="h5">
-          {place.name}
+          {place?.name}
         </Typography>
         <Box display="flex" justifyContent="space-between" my={2}>
-          <Rating name="read-only" value={Number(place.rating)} readOnly />
+          <Rating name="read-only" value={Number(place?.rating)} readOnly />
           <Typography component="legend">
-            {place.num_reviews} review{place.num_reviews > 1 && "s"}
+            {place?.num_reviews} review{place?.num_reviews > 1 && "s"}
           </Typography>
         </Box>
         <Box display="flex" justifyContent="space-between">
           <Typography component="legend">Price</Typography>
           <Typography gutterBottom variant="subtitle1">
-            {place.price_level}
+            {place?.price_level}
           </Typography>
         </Box>
         <Box display="flex" gap={"20%"} justifyContent="space-between">
           <Typography component="legend">Ranking</Typography>
           <Typography gutterBottom variant="subtitle1">
-            {place.ranking}
+            {place?.ranking}
           </Typography>
         </Box>
         {place?.awards?.map((award) => (
@@ -73,7 +75,7 @@ const PlaceDetails = ({ place, selected, refProp, childClicked }) => {
             sx={{ margin: "5px 5px 5px 0" }}
           />
         ))}
-        {place.address && (
+        {place?.address && (
           <Typography
             gutterBottom
             variant="body2"
@@ -87,10 +89,10 @@ const PlaceDetails = ({ place, selected, refProp, childClicked }) => {
             }}
           >
             <LocationOnIcon />
-            {place.address}
+            {place?.address}
           </Typography>
         )}
-        {place.phone && (
+        {place?.phone && (
           <Typography
             variant="body2"
             color="textSecondary"
@@ -100,7 +102,7 @@ const PlaceDetails = ({ place, selected, refProp, childClicked }) => {
               justifyContent: "space-between",
             }}
           >
-            <PhoneIcon /> {place.phone}
+            <PhoneIcon /> {place?.phone}
           </Typography>
         )}
       </CardContent>
@@ -108,14 +110,14 @@ const PlaceDetails = ({ place, selected, refProp, childClicked }) => {
         <Button
           size="small"
           sx={{ color: "#4E3636", ":hover": { backgroundColor: "#C4DFDF" } }}
-          onClick={() => window.open(place.web_url, "_blank")}
+          onClick={() => window.open(place?.web_url, "_blank")}
         >
           Trip Advisor
         </Button>
         <Button
           size="small"
           sx={{ color: "#4E3636", ":hover": { backgroundColor: "#C4DFDF" } }}
-          onClick={() => window.open(place.website, "_blank")}
+          onClick={() => window.open(place?.website, "_blank")}
         >
           Website
         </Button>
