@@ -9,10 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/lab": "^5.0.0-alpha.132",
+    "@mui/material": "^5.13.1",
+    "@mui/styles": "^5.13.1",
+    "@mui/system": "^5.13.1",
+    "@reach/combobox": "^0.18.0",
+    "@react-google-maps/api": "^2.18.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "axios": "^1.4.0",
     "eslint": "8.41.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "13.4.3",
+    "eslint-plugin-import": "^2.27.5",
+    "google-map-react": "^2.2.1",
     "next": "13.4.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "swr": "^2.1.5",
+    "use-places-autocomplete": "^4.0.0"
   }
 }
