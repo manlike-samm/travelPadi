@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, createRef } from "react";
 import {
   CircularProgress,

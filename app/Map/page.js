@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import GoogleMapReact from "google-map-react";
 import { Paper, Typography, useMediaQuery, Box, Rating } from "@mui/material";
